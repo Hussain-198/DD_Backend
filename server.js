@@ -8,6 +8,7 @@ const app = express();
 
 app.use(cors({
   origin: ["http://localhost:5173","https://dev-diary-frontend.vercel.app/"],
+  headers: ["Content-Type"],
   credentials: true
 }));
 app.use(express.json());
