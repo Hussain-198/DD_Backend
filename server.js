@@ -7,6 +7,7 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
+    origin:["https://dev-diary-frontend.vercel.app"],
     credentials: true, methods: ['GET', 'POST', 'PUT', 'DELETE'], allowedHeaders: ['Content-Type', 'Authorization']
 }));
 app.use(express.json());
