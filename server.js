@@ -7,7 +7,7 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-  origin: ["http://localhost:5173","https://dev-diary-frontend.vercel.app/"],
+  origin: "*",
   headers: ["Content-Type"],
   credentials: true
 }));
