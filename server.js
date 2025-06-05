@@ -7,14 +7,12 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-  origin: "*",
-  headers: ["Content-Type"],
-  credentials: true
+    credentials: true
 }));
 app.use(express.json());
 
-app.get("/",async(req,res)=>{
-    res.send(200).json({message:"welcome"})
+app.get("/", async (req, res) => {
+    res.send(200).json({ message: "welcome" })
 })
 
 const authRoutes = require("./routes/authRoutes");
@@ -31,7 +29,7 @@ mongoose
     .connect(process.env.MONGO_URI)
     .then(() => {
         console.log("MongoDB connected");
-        app.listen(process.env.PORT || 5000, () => 
+        app.listen(process.env.PORT || 5000, () =>
             console.log("Server running in port", process.env.PORT || 5000)
         );
     })
