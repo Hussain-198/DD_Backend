@@ -12,6 +12,10 @@ app.use(cors({
 }));
 app.use(express.json());
 
+app.get("/",async(req,res)=>{
+    res.send(200).json({message:"welcome"})
+})
+
 const authRoutes = require("./routes/authRoutes");
 const taskRoutes = require("./routes/taskRoutes");
 const goalRoutes = require("./routes/goalRoutes");
